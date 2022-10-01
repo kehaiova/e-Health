@@ -1,0 +1,54 @@
+.main-card {
+  flex-direction: row;
+  align-items: center;
+  padding: 40px 30px;
+  gap:20px;
+  position: absolute;
+  width: 1201px;
+  height: 390px;
+  margin: 0;
+  background: linear-gradient(107.78deg, rgba(255, 255, 255, 0.7) 3.55%, rgba(255, 255, 255, 0.2) 61.93%);
+  backdrop-filter: blur(10px);
+}
+
+mat-card{
+  display: flex;
+  border-radius: 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  justify-content: center;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 20px 40px rgba(37, 69, 131, 0.2);
+}
+
+mat-icon {
+  color: #313048;
+}
+
+.inside-card {
+  display: flex;
+  width: 70px;
+  height: 70px;
+  border-radius: 20px;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(102.58deg, rgba(255, 255, 255, 0.7) 12.03%, rgba(255, 255, 255, 0.1) 86.21%);
+}
+
+.card-1 {
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width:200px;
+  height: 192px;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  filter: drop-shadow(0px 20px 40px rgba(37, 69, 131, 0.2));
+  background-color: transparent;
+}
+
+p {
+  text-align: center;
+  font-size: 16px;
+}

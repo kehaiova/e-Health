@@ -1,0 +1,8 @@
+body {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-image: url("src/assets/background.svg") ;
+  background-color: #1c8aac;
+}
