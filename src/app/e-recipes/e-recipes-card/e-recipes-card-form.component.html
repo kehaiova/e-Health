@@ -1,0 +1,31 @@
+<body>
+<mat-card class="patient-info">
+  <mat-card-header>
+    ПАЦИЕНТ
+  </mat-card-header>
+  <mat-card-content>
+    <mat-form-field appearance="outline">
+      <mat-label>ТИП ИДЕНТИФИКАТОР</mat-label>
+      <mat-select>
+        <mat-option [value]="1">ЕГН</mat-option>
+        <mat-option [value]="2">ЛНЧ</mat-option>
+        <mat-option [value]="3">ССН</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>ИДЕНТИФИКАТОР</mat-label>
+      <input matInput placeholder="ИДЕНТИФИКАТОР">
+    </mat-form-field>
+    <mat-card-actions>
+      <button mat-raised-button>ИЗПЪЛНИ</button>
+    </mat-card-actions>
+  </mat-card-content>
+</mat-card>
+<mat-card class="details-info">
+  <mat-card-header>
+    ПРЕДПИСАНИЕ
+  </mat-card-header>
+  <mat-card-content></mat-card-content>
+</mat-card>
+</body>
+

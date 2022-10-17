@@ -1,4 +1,7 @@
 export const ROUTE_PATHS = {
   login: 'login',
-  menu: 'menu'
+  menu: 'menu',
+  recipes: 'e-recipes',
+  referrals: 'referrals',
+  outpation: 'outpation-list'
 }

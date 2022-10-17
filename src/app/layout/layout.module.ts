@@ -11,8 +11,9 @@ import { MatInputModule } from '@angular/material/input'
 import { MatCheckboxModule} from '@angular/material/checkbox'
 import { MatIconModule} from '@angular/material/icon';
 import { MenuComponent } from './menu/menu.component';
-import { MenuFormComponent } from './menu/menu-form.component'
-
+import { MenuFormComponent } from './menu/menu-form.component';
+import { TopNavigationComponent } from './top-navigation/top-navigation.component'
+import {MatToolbarModule} from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { MenuFormComponent } from './menu/menu-form.component'
     LoginComponent,
     LoginFormComponent,
     MenuComponent,
-    MenuFormComponent
+    MenuFormComponent,
+    TopNavigationComponent
   ],
   imports: [
     CommonModule,
@@ -30,13 +32,15 @@ import { MenuFormComponent } from './menu/menu-form.component'
     MatFormFieldModule,
     MatCheckboxModule,
     MatInputModule,
-    MatIconModule
+    MatIconModule,
+    MatToolbarModule,
   ],
   exports: [
     LoginComponent,
     LoginFormComponent,
     MenuComponent,
-    MenuFormComponent
+    MenuFormComponent,
+    TopNavigationComponent
   ]
 })
 export class LayoutModule { }

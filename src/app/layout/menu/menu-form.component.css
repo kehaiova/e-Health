@@ -33,7 +33,9 @@ mat-icon {
   border-radius: 20px;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(102.58deg, rgba(255, 255, 255, 0.7) 12.03%, rgba(255, 255, 255, 0.1) 86.21%);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.1) 100%);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 20px 40px rgba(37, 69, 131, 0.2);
 }
 
 .card-1 {

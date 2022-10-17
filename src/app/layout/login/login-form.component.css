@@ -23,7 +23,6 @@ mat-card {
 
 }
 
-
 .title:last-child {
   height: 59px;
   font-style: normal;
@@ -33,7 +32,6 @@ mat-card {
 .mat-form-field-outline {
   background-color: whitesmoke;
 }
-
 
 mat-form-field {
   width: 23rem;
@@ -51,11 +49,9 @@ mat-form-field {
   border-radius: 0 28px 28px 0 !important;
 }
 
-
 .col:first-child {
   font-size: 20px;
 }
-
 
 .mat-raised-button {
   font-size: 14px;
@@ -73,12 +69,10 @@ mat-form-field {
   padding-bottom: 10px;
 }
 
-
 .mat-raised-button:hover {
   background: linear-gradient(#1E8FB3, #1E8FB3) padding-box,
   linear-gradient(to left, #aae8ef, #1E8FB3) border-box;
 }
-
 
 ::ng-deep .mat-form-field-flex > .mat-form-field-infix {
   padding: 0.7em !important;

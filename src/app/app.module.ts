@@ -7,6 +7,9 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { LayoutModule } from './layout/layout.module';
 import { MatIconModule } from '@angular/material/icon';
+import { ERecipesModule } from './e-recipes/e-recipes.module';
+import { OutpationListModule } from './outpation-list/outpation-list.module';
+import { ReferralsModule } from './referrals/referrals.module';
 
 
 @NgModule({
@@ -19,7 +22,10 @@ import { MatIconModule } from '@angular/material/icon';
     BrowserModule,
     BrowserAnimationsModule,
     RouterModule,
-    LayoutModule
+    LayoutModule,
+    ERecipesModule,
+    OutpationListModule,
+    ReferralsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
