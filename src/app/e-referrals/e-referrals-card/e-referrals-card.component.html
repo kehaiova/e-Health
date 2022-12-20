@@ -1,0 +1,39 @@
+<mat-card class="main-card">
+  <mat-card-title>НАПРАВЛЕНИЕ</mat-card-title>
+  <mat-stepper linear #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+      <ng-template matStepLabel>
+        Данни за пациент
+      </ng-template>
+      <form [formGroup]="firstFormGroup">
+        <app-e-referrals-card-form
+          (personBindingModelReferrals)="submitReferralsFormParent($event)"></app-e-referrals-card-form>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="parentFormGroup">
+      <ng-template matStepLabel>Попълване на направление</ng-template>
+      <form [formGroup]="parentFormGroup">
+        <app-e-referrals-card-info [referralsDetails]="(referralsPersonDetails | async)"></app-e-referrals-card-info>
+        <mat-divider></mat-divider>
+        <app-e-referrals-card-general-data></app-e-referrals-card-general-data>
+        <mat-divider></mat-divider>
+        <app-e-referrals-card-diagnosis></app-e-referrals-card-diagnosis>
+        <mat-divider></mat-divider>
+        <app-e-referrals-card-sent-for></app-e-referrals-card-sent-for>
+        <div>
+          <button mat-button matStepperPrevious>НАЗАД</button>
+          <button mat-button matStepperNext [disabled]="parentFormGroup.invalid">НАПРЕД</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Преглед и изпращане</ng-template>
+      <app-e-referrals-save-card></app-e-referrals-save-card>
+      <div>
+        <button mat-button matStepperPrevious>НАЗАД</button>
+        <button mat-button matStepperNext (click)="saveReferralData()">ИЗПРАЩАНЕ</button>
+        <button mat-button matStepperNext (click)="stepper.reset()">РЕСТАРТ</button>
+      </div>
+    </mat-step>
+  </mat-stepper>
+</mat-card>

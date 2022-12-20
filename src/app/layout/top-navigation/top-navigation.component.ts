@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {UserBindingModel} from "../../models/user-binding-model";
+import {UserService} from "../../services/user.service";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-top-navigation',
@@ -7,9 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopNavigationComponent implements OnInit {
 
-  constructor() { }
+  constructor(private userService: UserService) { }
+  user: UserBindingModel = {} as UserBindingModel;
 
   ngOnInit(): void {
+    this.user = this.userService.user;
   }
 
 }

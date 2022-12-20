@@ -1,8 +1,6 @@
 mat-card {
   box-sizing: border-box;
   border-radius: 20px;
-  width: 410px;
-  height: 500px;
   color: black;
   margin: 0;
   position: absolute;
@@ -16,12 +14,28 @@ mat-card {
   background: linear-gradient(85.45deg, rgba(255, 255, 255, 0.7) 5.82%, rgba(255, 255, 255, 0.2) 96.86%);
   border: 2px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0px 20px 40px rgba(37, 69, 131, 0.2);
+  width: 410px;
+  height: 500px;
 }
 
-::ng-deep .mat-form-field-label {
-  color: rgba(0, 0, 0, .6) !important;
-
+mat-card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
+
+form {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+  color: dimgrey;
+}
+
 
 .title:last-child {
   height: 59px;
@@ -29,14 +43,47 @@ mat-card {
   color: #313048;
 }
 
-.mat-form-field-outline {
-  background-color: whitesmoke;
-}
-
 mat-form-field {
-  width: 23rem;
+  width: 26rem;
   color: black;
   border-radius: 2em;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.col:first-child {
+  font-size: 20px;
+}
+
+.mat-raised-button {
+  font-size: 14px;
+  background: linear-gradient(#ace5de, #ace5de) padding-box,
+  linear-gradient(to left, #aae8ef, #ace5de) border-box;
+  border-radius: 2em;
+  border: 2px solid transparent;
+  box-sizing: border-box;
+  width: 270px;
+  height: 40px;
+  gap: 132px;
+}
+
+
+.mat-raised-button:hover {
+  background: linear-gradient(#77d5cb, #77d5cb) padding-box,
+  linear-gradient(to left, #aae8ef, #77d5cb) border-box;
+}
+
+
+::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+  color: #1c8aac !important;
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+  color: #1c8aac !important;
 }
 
 ::ng-deep .mat-form-field-outline-start {
@@ -49,33 +96,8 @@ mat-form-field {
   border-radius: 0 28px 28px 0 !important;
 }
 
-.col:first-child {
-  font-size: 20px;
-}
-
-.mat-raised-button {
-  font-size: 14px;
-  background: linear-gradient(#0ab9cd, #0ab9cd) padding-box,
-  linear-gradient(to left, #aae8ef, #0ab9cd) border-box;
-  border-radius: 2em;
-  border: 2px solid transparent;
-  box-sizing: border-box;
-  width: 350px;
-  height: 40px;
-  gap: 132px;
-}
-
-::ng-deep .mat-form-field-wrapper {
-  padding-bottom: 10px;
-}
-
-.mat-raised-button:hover {
-  background: linear-gradient(#1E8FB3, #1E8FB3) padding-box,
-  linear-gradient(to left, #aae8ef, #1E8FB3) border-box;
-}
-
 ::ng-deep .mat-form-field-flex > .mat-form-field-infix {
-  padding: 0.7em !important;
+  padding: 1em !important;
 }
 
 ::ng-deep .mat-focused .mat-form-field-label {
@@ -84,7 +106,16 @@ mat-form-field {
 }
 
 ::ng-deep .mat-form-field-label {
-  top: 22px !important;
-  margin-left: 16px;
+  top: 26px !important;
+  margin-left: 22px;
 }
+
+::ng-deep .mat-card-actions {
+  padding: 0 !important;
+  margin-left: 0 !important;
+}
+
+
+
+
 

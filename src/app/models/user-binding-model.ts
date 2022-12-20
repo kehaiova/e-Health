@@ -1,5 +1,12 @@
 export interface UserBindingModel {
-  personId: string,
+  id: string,
+  doctorName: string,
+  email: string,
   username: string,
-  password: string
+  password: string,
+  uinDoctor: string,
+
+  registryNumberLz: string,
+
+
 }

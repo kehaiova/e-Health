@@ -1,0 +1,29 @@
+<mat-card>
+  <mat-card-header>Общи данни</mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="subGeneralDataFormGroup">
+      <mat-form-field appearance="outline" class="no-wrapper">
+        <mat-label>Медицинско направление, No.</mat-label>
+        <input matInput formControlName="medicalReferralNo" [(ngModel)]="savingService.referral.medicalReferralNo">
+        <mat-error class="error" *ngIf="subGeneralDataFormGroup.get('medicalReferralNo')?.hasError('required')">
+          *Задължително поле
+        </mat-error>
+        <mat-error class="error" *ngIf="subGeneralDataFormGroup.get('medicalReferralNo')?.hasError('pattern')">
+          *Полето трябва да съдържа само цифри
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="no-wrapper">
+        <mat-label>Амбулаторен лист, No.</mat-label>
+        <input matInput formControlName="outpatientListNo" [(ngModel)]="savingService.referral.outpationListNo">
+        <mat-error class="error" *ngIf="subGeneralDataFormGroup.get('outpatientListNo')?.hasError('required')">
+          *Задължително поле
+        </mat-error>
+        <mat-error class="error" *ngIf="subGeneralDataFormGroup.get('outpatientListNo')?.hasError('pattern')">
+          *Полето трябва да съдържа само цифри
+        </mat-error>
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+</mat-card>
+

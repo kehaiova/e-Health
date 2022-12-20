@@ -1,0 +1,38 @@
+<mat-card>
+  <mat-card-header>Данни за потребителя</mat-card-header>
+  <mat-card-content>
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Потребителско име</mat-label>
+        <input matInput [readonly]="!editMode" [(ngModel)]="user.username">
+      </mat-form-field>
+      <button mat-icon-button class="icon-button" (click)="edit()">
+        <mat-icon>edit</mat-icon>
+      </button>
+    </div>
+
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Парола</mat-label>
+        <input matInput type="password" [readonly]="!editMode" [(ngModel)]="user.password">
+      </mat-form-field>
+      <button mat-icon-button class="icon-button" (click)="edit()">
+        <mat-icon>edit</mat-icon>
+      </button>
+    </div>
+
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Имейл адрес</mat-label>
+        <input matInput [readonly]="!editMode" [(ngModel)]="user.email">
+      </mat-form-field>
+      <button mat-icon-button class="icon-button" (click)="edit()">
+        <mat-icon>edit</mat-icon>
+      </button>
+    </div>
+
+
+    <button *ngIf="editMode === true" [hidden]="isSaved === true" (click)="saveInfo(user.id)">Запази</button>
+
+  </mat-card-content>
+</mat-card>

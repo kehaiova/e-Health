@@ -1,0 +1,78 @@
+mat-toolbar {
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background: #74d4cc;
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+  align-items: center;
+  height: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+}
+
+mat-nav-list {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  text-align: center;
+}
+
+div {
+  background: #c0e7e2;
+}
+
+.active-list-item {
+  background: #e1f5f7 !important;
+}
+
+.mat-list-item {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.mat-list-item:first-child {
+  border-bottom-left-radius: 20px;
+}
+
+.mat-list-item:hover {
+  background: #313048 !important;
+  color: white;
+}
+
+.mat-list-base .mat-list-item, .mat-list-base .mat-list-option {
+  height: 42px;
+  margin-right: 10px;
+}
+
+.user-profile {
+  background: transparent;
+  margin-right: 10px;
+  padding-bottom: 2px;
+}
+
+img {
+  width: 30px;
+}
+
+button {
+  background: none;
+  border: none;
+  outline: none;
+}
+
+.mat-menu-item {
+  border: none;
+}
+
+span {
+  margin-right: 5px;
+}

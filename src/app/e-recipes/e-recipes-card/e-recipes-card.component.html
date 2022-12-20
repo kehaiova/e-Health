@@ -1,8 +1,43 @@
-<body>
 <mat-card class="main-card">
   <mat-card-title>Е-РЕЦЕПТА</mat-card-title>
-  <app-e-recipes-card-form></app-e-recipes-card-form>
+  <mat-stepper linear #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+      <ng-template matStepLabel>
+        Данни за пациент
+      </ng-template>
+      <form [formGroup]="firstFormGroup">
+        <app-e-recipes-card-form
+          (personBindingModelRecipes)="submitRecipesFormParent($event)"></app-e-recipes-card-form>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="parentFormGroup">
+      <ng-template matStepLabel>Попълване на рецептурна бланка</ng-template>
+      <form [formGroup]="parentFormGroup">
+        <app-e-recipes-info [recipesDetails]="(recipesPersonDetails | async)"></app-e-recipes-info>
+        <mat-divider></mat-divider>
+        <app-e-recipes-general-data></app-e-recipes-general-data>
+        <mat-divider></mat-divider>
+        <app-e-recipes-medical-prescriptions></app-e-recipes-medical-prescriptions>
+        <div>
+          <button mat-button matStepperPrevious>НАЗАД</button>
+          <button mat-button matStepperNext
+                  [disabled]="parentFormGroup.invalid || savingService.medications.length === 0">НАПРЕД
+          </button>
+        </div>
+      </form>
+
+
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Преглед и изпращане</ng-template>
+      <app-e-recipes-save-card></app-e-recipes-save-card>
+      <div>
+        <button mat-button matStepperPrevious>НАЗАД</button>
+        <button mat-button matStepperNext (click)="saveData()">ИЗПРАЩАНЕ</button>
+        <button mat-button matStepperNext (click)="stepper.reset()">РЕСТАРТ</button>
+      </div>
+    </mat-step>
+  </mat-stepper>
 </mat-card>
-</body>
 
 

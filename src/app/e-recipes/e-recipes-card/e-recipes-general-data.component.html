@@ -1,0 +1,38 @@
+<mat-card>
+  <mat-card-header>Данни по предписанието</mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="subGeneralDataFormGroup">
+      <mat-form-field appearance="outline" class="no-wrapper">
+        <mat-label>Рецептурна книжка, No.</mat-label>
+        <input matInput formControlName="prescriptionBookletNo" [(ngModel)]="savingService.prescriptionBookletNo">
+        <mat-hint class="hint">*Попълва се в случаите на хронично заболяване</mat-hint>
+        <mat-error class="error" *ngIf="subGeneralDataFormGroup.get('prescriptionBookletNo')?.hasError('pattern')">
+          *Полето трябва да съдържа само цифри
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="no-wrapper">
+        <mat-label>Номер на протокол</mat-label>
+        <input matInput formControlName="protocolNo" [(ngModel)]="savingService.protocolNo">
+        <mat-error class="error" *ngIf="subGeneralDataFormGroup.get('protocolNo')?.hasError('required')">
+          *Задължително поле
+        </mat-error>
+        <mat-error class="error" *ngIf="subGeneralDataFormGroup.get('protocolNo')?.hasError('pattern')">
+          *Полето трябва да съдържа само цифри
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="no-wrapper">
+        <mat-label>Амбулаторен лист, No.</mat-label>
+        <input matInput formControlName="outpatientListNo" [(ngModel)]="savingService.outpationListNo">
+        <mat-error class="error" *ngIf="subGeneralDataFormGroup.get('outpatientListNo')?.hasError('required')">
+          *Задължително поле
+        </mat-error>
+        <mat-error class="error" *ngIf="subGeneralDataFormGroup.get('outpatientListNo')?.hasError('pattern')">
+          *Полето трябва да съдържа само цифри
+        </mat-error>
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+</mat-card>
+

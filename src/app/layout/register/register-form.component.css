@@ -1,0 +1,80 @@
+mat-card {
+  box-sizing: border-box;
+  border-radius: 20px;
+  color: black;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: linear-gradient(85.45deg, rgba(255, 255, 255, 0.7) 5.82%, rgba(255, 255, 255, 0.2) 96.86%);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 20px 40px rgba(37, 69, 131, 0.2);
+  width: 450px;
+  height: 700px;
+}
+
+mat-card-content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+  color: dimgrey;
+}
+
+.title:last-child {
+  height: 59px;
+  font-style: normal;
+  color: #313048;
+}
+
+mat-form-field {
+  width: 26rem;
+  color: black;
+  border-radius: 2em;
+  margin-bottom: 5px;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+
+}
+
+.col:first-child {
+  font-size: 20px;
+}
+
+.mat-raised-button {
+  font-size: 14px;
+  background: linear-gradient(#ace5de, #ace5de) padding-box,
+  linear-gradient(to left, #aae8ef, #ace5de) border-box;
+  border-radius: 2em;
+  border: 2px solid transparent;
+  box-sizing: border-box;
+  width: 275px;
+  height: 40px;
+  gap: 132px;
+}
+
+
+.mat-raised-button:hover {
+  background: linear-gradient(#77d5cb, #77d5cb) padding-box,
+  linear-gradient(to left, #aae8ef, #77d5cb) border-box;
+}
+
+
+
+
+
+
+

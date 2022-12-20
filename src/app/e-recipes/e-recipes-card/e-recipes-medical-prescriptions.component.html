@@ -1,0 +1,36 @@
+<mat-card>
+  <mat-card-header>Предписание</mat-card-header>
+  <div>
+    <button mat-raised-button [disabled]="subMedicalPrescriptionForm.invalid" (click)="addDrugToList(); sendData()">Добави лекарствен продукт</button>
+
+  </div>
+  <mat-card-content>
+    <form [formGroup]="subMedicalPrescriptionForm" class="medical-prescriptions">
+      <mat-form-field appearance="outline" class="no-wrapper">
+        <mat-label>Наименование</mat-label>
+        <input matInput formControlName="drugProductName" [(ngModel)]="model.drugProductName">
+        <mat-error class="error" *ngIf="subMedicalPrescriptionForm.get('drugProductName')!.hasError('required')">
+          *Задължително поле
+        </mat-error>
+        <mat-error class="error" *ngIf="subMedicalPrescriptionForm.get('drugProductName')!.hasError('pattern')">
+          *Полето трябва да съдържа само букви
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="no-wrapper">
+        <mat-label>МКБ код</mat-label>
+        <input matInput formControlName="mcbCode" [(ngModel)]="model.mcbCode">
+        <mat-error class="error" *ngIf="subMedicalPrescriptionForm.get('mcbCode')!.hasError('required')">
+          *Задължително поле
+        </mat-error>
+        <mat-error class="error" *ngIf="subMedicalPrescriptionForm.get('mcbCode')!.hasError('pattern')">
+          *Невалиден МКБ код
+        </mat-error>
+        <mat-hint>Напр.: J01.1</mat-hint>
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+</mat-card>
+
+
+

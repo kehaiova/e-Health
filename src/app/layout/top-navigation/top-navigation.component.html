@@ -1,3 +1,37 @@
-<mat-toolbar>
-  <span>My Application</span>
-</mat-toolbar>
+<div>
+  <mat-toolbar>
+    <mat-nav-list class="menu">
+
+      <mat-list-item routerLink="/e-recipes" routerLinkActive="active-list-item">
+        <span>Е-Рецепти</span>
+
+      </mat-list-item>
+
+      <mat-list-item routerLink="/referrals" routerLinkActive="active-list-item">
+        <span>Направление</span>
+      </mat-list-item>
+
+      <mat-list-item routerLink="/references" routerLinkActive="active-list-item">
+        <span>Справки</span>
+      </mat-list-item>
+
+    </mat-nav-list>
+    <div class="user-profile">
+      <button>
+      <span>{{user.doctorName}}</span>
+      <img src="./assets/doctor_profile.png" [matMenuTriggerFor]="menu">
+      </button>
+      <mat-menu #menu="matMenu" xPosition="before">
+        <button mat-menu-item routerLink="/account">
+          Профил
+        </button>
+        <mat-divider></mat-divider>
+        <button mat-menu-item routerLink="/login">
+          Изход
+        </button>
+      </mat-menu>
+    </div>
+
+  </mat-toolbar>
+</div>
+

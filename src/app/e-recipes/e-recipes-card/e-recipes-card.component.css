@@ -1,19 +1,52 @@
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #BAECF2;
-}
-
-.main-card{
-  width: 90vw;
-  height: 90vh;
+.main-card {
+  width: 93%;
   background: linear-gradient(119.23deg, rgba(255, 255, 255, 0.7) 16.98%, rgba(255, 255, 255, 0.1) 92.15%);
   border: 2px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0px 20px 40px rgba(37, 69, 131, 0.2);
   border-radius: 20px;
+  margin: 20px auto 10%;
+  min-height: 85%;
+}
+
+mat-divider {
+  margin-top: 30px;
 }
 
 mat-card-title {
   text-align: center;
 }
+
+mat-stepper {
+  background: transparent;
+}
+
+::ng-deep .mat-step-header .mat-step-icon-selected {
+  background-color: #74d4cc;
+}
+
+::ng-deep .mat-step-header .mat-step-icon-state-edit {
+  background-color: #313048;
+}
+
+button {
+  background: #313048;
+  border: 1px solid #99A0BA;
+  border-radius: 2em;
+  color: white;
+  align-items: center;
+  padding: 0.3em 1.5em !important;
+  margin-right: 20px;
+}
+
+button:disabled {
+  border: none;
+  background: darkgrey;
+
+}
+
+div {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+

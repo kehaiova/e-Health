@@ -1,0 +1,31 @@
+<mat-card class="patient-info">
+  <mat-card-header>
+    <mat-icon>search</mat-icon>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="referenceFormGroup">
+      <mat-form-field appearance="outline" class="no-wrapper">
+        <mat-label>От дата</mat-label>
+        <input matInput [matDatepicker]="pickerStartDate" [(ngModel)]="startDate" [disabled] = "true" formControlName="startDate">
+        <mat-datepicker-toggle matSuffix [for]="pickerStartDate" [disabled]="false"></mat-datepicker-toggle>
+        <mat-datepicker #pickerStartDate [disabled]="false"></mat-datepicker>
+        <mat-error class="error" *ngIf="referenceFormGroup.controls['startDate'].hasError('required')">
+          *Задължително поле
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="no-wrapper">
+        <mat-label>До дата</mat-label>
+        <input matInput [matDatepicker]="pickerEndDate" [disabled]="true" [(ngModel)]="endDate"  formControlName="endDate">
+        <mat-datepicker-toggle matSuffix [for]="pickerEndDate" [disabled]="false"></mat-datepicker-toggle>
+        <mat-datepicker #pickerEndDate [disabled]="false"></mat-datepicker>
+        <mat-error class="error" *ngIf="referenceFormGroup.controls['endDate'].hasError('required')">
+          *Задължително поле
+        </mat-error>
+      </mat-form-field>
+    </form>
+      <button mat-raised-button [disabled]="referenceFormGroup.invalid" (click)="submitDates(model)">ИЗПЪЛНИ</button>
+  </mat-card-content>
+</mat-card>
+
+

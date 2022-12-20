@@ -1,31 +1,41 @@
-<body>
 <mat-card class="patient-info">
   <mat-card-header>
-    ПАЦИЕНТ
+    <mat-icon>search</mat-icon>
   </mat-card-header>
   <mat-card-content>
-    <mat-form-field appearance="outline">
-      <mat-label>ТИП ИДЕНТИФИКАТОР</mat-label>
-      <mat-select>
-        <mat-option [value]="1">ЕГН</mat-option>
-        <mat-option [value]="2">ЛНЧ</mat-option>
-        <mat-option [value]="3">ССН</mat-option>
-      </mat-select>
-    </mat-form-field>
-    <mat-form-field appearance="outline">
-      <mat-label>ИДЕНТИФИКАТОР</mat-label>
-      <input matInput placeholder="ИДЕНТИФИКАТОР">
-    </mat-form-field>
-    <mat-card-actions>
-      <button mat-raised-button>ИЗПЪЛНИ</button>
-    </mat-card-actions>
+    <form [formGroup]="subValidationFormGroup">
+      <mat-form-field appearance="outline" class="no-wrapper">
+        <mat-label>Тип идентификатор</mat-label>
+        <mat-select formControlName="id_type" [(ngModel)]="model.idType">
+          <mat-option [value]="1">ЕГН</mat-option>
+          <mat-option [value]="2">ЛНЧ</mat-option>
+          <mat-option [value]="3">ССН</mat-option>
+        </mat-select>
+        <mat-error class="error" *ngIf="subValidationFormGroup.get('id_type')!.hasError('required')">
+          *Задължително поле
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="no-wrapper">
+        <mat-label>Идентификатор</mat-label>
+        <input matInput placeholder="Идентификатор" formControlName="personIdentificator" [(ngModel)]="model.personIdentificator">
+        <mat-error class="error" *ngIf="subValidationFormGroup.get('personIdentificator')!.hasError('required')">
+          *Задължително поле
+        </mat-error>
+        <mat-error class="error" *ngIf="subValidationFormGroup.get('personIdentificator')!.hasError('minlength')">
+          *Дължината трябва да бъде 10 символа
+        </mat-error>
+        <mat-error class="error" *ngIf="subValidationFormGroup.get('personIdentificator')!.hasError('maxlength')">
+          *Дължината не може да бъде повече от 10 символа
+        </mat-error>
+        <mat-error class="error" *ngIf="subValidationFormGroup.get('personIdentificator')!.hasError('pattern')">
+          *Полето може да съдържа само цифри
+        </mat-error>
+
+      </mat-form-field>
+    </form>
+    <button mat-raised-button (click)="submitRecipesForm(model)" [disabled]="subValidationFormGroup.invalid">
+      ИЗПЪЛНИ
+    </button>
   </mat-card-content>
 </mat-card>
-<mat-card class="details-info">
-  <mat-card-header>
-    ПРЕДПИСАНИЕ
-  </mat-card-header>
-  <mat-card-content></mat-card-content>
-</mat-card>
-</body>
 

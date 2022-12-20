@@ -1,0 +1,57 @@
+mat-card {
+  background: linear-gradient(90.89deg, rgba(255, 255, 255, 0.7) 19.49%, rgba(255, 255, 255, 0.1) 72.8%);
+  box-shadow: 0 20px 40px rgba(37, 69, 131, 0.2);
+  border-radius: 20px;
+  padding: 0 0 20px;
+}
+
+mat-card-header {
+  background: #d7edea;
+  border: 1px solid #d7edea;
+  border-radius: 20px 20px 0 0;
+  padding: 5px 0 5px 0;
+  color: dimgrey;
+}
+
+mat-card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 40px;
+  margin-left: 40px;
+}
+
+mat-form-field {
+  width: 26rem;
+  border-radius: 2em;
+  margin-bottom: 5px;
+  margin-right: 20px;
+}
+
+mat-form-field:first-child {
+  margin-top: 50px;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  background: #313048;
+  border: 1px solid #99A0BA;
+  border-radius: 2em;
+  color: white;
+  align-items: center;
+  padding: 0.7em 1.5em !important;
+  width: 13rem;
+}
+
+.icon-button {
+  background: #313048;
+  padding: 0 !important;
+  width: 3rem;
+}

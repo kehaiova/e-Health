@@ -1,0 +1,40 @@
+<mat-card class="patient-info">
+  <mat-card-header>
+    <mat-icon>search</mat-icon>
+  </mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="subReferralsCardFormGroup">
+      <mat-form-field appearance="outline" class="no-wrapper">
+        <mat-label>Тип идентификатор</mat-label>
+        <mat-select formControlName="id_type" [(ngModel)]="model.idType">
+          <mat-option [value]="1">ЕГН</mat-option>
+          <mat-option [value]="2">ЛНЧ</mat-option>
+          <mat-option [value]="3">ССН</mat-option>
+        </mat-select>
+        <mat-error class="error" *ngIf="subReferralsCardFormGroup.get('id_type')!.hasError('required')">
+          *Задължително поле
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="no-wrapper">
+        <mat-label>Идентификатор</mat-label>
+        <input matInput placeholder="Идентификатор" formControlName="personIdentificator" [(ngModel)]="model.personIdentificator">
+        <mat-error class="error" *ngIf="subReferralsCardFormGroup.get('personIdentificator')!.hasError('required')">
+          *Задължително поле
+        </mat-error>
+        <mat-error class="error" *ngIf="subReferralsCardFormGroup.get('personIdentificator')!.hasError('minlength')">
+          *Дължината трябва да бъде 10 символа
+        </mat-error>
+        <mat-error class="error" *ngIf="subReferralsCardFormGroup.get('personIdentificator')!.hasError('maxlength')">
+          *Дължината не може да бъде повече от 10 символа
+        </mat-error>
+        <mat-error class="error" *ngIf="subReferralsCardFormGroup.get('personIdentificator')!.hasError('pattern')">
+          *Полето може да съдържа само цифри
+        </mat-error>
+      </mat-form-field>
+    </form>
+    <button mat-raised-button (click)="submitReferralsForm(model)" [disabled]="subReferralsCardFormGroup.invalid">ИЗПЪЛНИ</button>
+
+  </mat-card-content>
+</mat-card>
+
+

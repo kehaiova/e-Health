@@ -6,18 +6,26 @@
     Приложение за извънболнична помощ
   </mat-card-subtitle>
   <mat-card-content>
-    <mat-form-field appearance="outline">
-      <mat-label>Потребителско име</mat-label>
-      <input matInput>
-      <mat-icon matSuffix>account_circle</mat-icon>
-    </mat-form-field>
-    <mat-form-field appearance="outline">
-      <mat-label>Парола</mat-label>
-      <input matInput type="password">
-      <mat-icon matIcon matSuffix>key</mat-icon>
-    </mat-form-field>
+    <form [formGroup]="loginFormGroup">
+      <mat-form-field appearance="outline">
+        <mat-label>Потребителско име</mat-label>
+        <input matInput [(ngModel)]="model.username" formControlName="username">
+        <mat-icon matSuffix>account_circle</mat-icon>
+        <mat-error *ngIf="loginFormGroup.controls['username'].hasError('required')">*Задължително поле</mat-error>
+
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Парола</mat-label>
+        <input matInput type="password" formControlName="password" [(ngModel)]="model.password">
+        <mat-icon matIcon matSuffix>key</mat-icon>
+        <mat-error *ngIf="loginFormGroup.controls['password'].hasError('required')">*Задължително поле</mat-error>
+
+      </mat-form-field>
+    </form>
+
   </mat-card-content>
   <mat-card-actions>
-    <button mat-raised-button routerLink="/menu">ВХОД</button>
+    <button mat-raised-button [disabled]="loginFormGroup.invalid" (click)="login(model.username, model.password)">ВХОД</button>
   </mat-card-actions>
+  <a routerLink="/register">РЕГИСТРАЦИЯ</a>
 </mat-card>

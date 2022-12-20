@@ -1,0 +1,17 @@
+<mat-card>
+  <mat-card-header>Изпраща се за</mat-card-header>
+  <mat-card-content>
+    <form [formGroup]="subReasonsFormGroup">
+      <mat-form-field appearance="outline" class="no-wrapper">
+        <mat-label>Изпраща се за</mat-label>
+        <mat-select formControlName="reason" class="select" [(ngModel)]="savingService.referral.sentFor">
+         <mat-option class="option" *ngFor="let reason of reasons | async" [value]="reason.reason">{{reason.reason}}</mat-option>
+        </mat-select>
+        <mat-error class="error" *ngIf="subReasonsFormGroup.get('reason')!.hasError('required')">
+          *Задължително поле
+        </mat-error>
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+</mat-card>
+

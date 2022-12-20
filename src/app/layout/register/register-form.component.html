@@ -1,0 +1,65 @@
+<mat-card>
+  <mat-card-title>
+    РЕГИСТРАЦИЯ
+  </mat-card-title>
+  <mat-card-subtitle>
+    Приложение за извънболнична помощ
+  </mat-card-subtitle>
+  <mat-card-content>
+    <form [formGroup]="registerForm">
+      <mat-form-field appearance="outline">
+        <mat-label>Име и фамилия</mat-label>
+        <input matInput [(ngModel)] = "model.doctorName" formControlName="doctorName">
+        <mat-icon matIcon matSuffix>person</mat-icon>
+        <mat-error *ngIf="registerForm.controls['doctorName'].hasError('required')">*Задължително поле</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Имейл адрес</mat-label>
+        <input matInput [(ngModel)] = "model.email" formControlName="email">
+        <mat-icon matIcon matSuffix>mail</mat-icon>
+        <mat-error *ngIf="registerForm.controls['email'].hasError('required')">*Задължително поле</mat-error>
+        <mat-error *ngIf="registerForm.controls['email'].hasError('email')">*Въведете валиден имейл адрес</mat-error>
+
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Потребителско име</mat-label>
+        <input matInput [(ngModel)] = "model.username" formControlName="username">
+        <mat-icon matSuffix>account_circle</mat-icon>
+        <mat-error *ngIf="registerForm.controls['username'].hasError('required')">*Задължително поле</mat-error>
+
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>Парола</mat-label>
+        <input matInput type="password" [(ngModel)] = "model.password" formControlName="password">
+        <mat-icon matIcon matSuffix>key</mat-icon>
+        <mat-error *ngIf="registerForm.controls['password'].hasError('required')">*Задължително поле</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>УИН</mat-label>
+        <input matInput [(ngModel)] = "model.uinDoctor" formControlName="uinDoctor">
+        <mat-icon matIcon matSuffix>badge</mat-icon>
+        <mat-error *ngIf="registerForm.controls['uinDoctor'].hasError('required')">*Задължително поле</mat-error>
+        <mat-error *ngIf="registerForm.controls['uinDoctor'].hasError('minlength')">*Дължина трябва да бъде 10 цифри</mat-error>
+        <mat-error *ngIf="registerForm.controls['uinDoctor'].hasError('maxlength')">*УИН не може да бъде повече от 10 цифри</mat-error>
+        <mat-error *ngIf="registerForm.controls['uinDoctor'].hasError('pattern')">*Полето трябва да съдържа само цифри</mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Лечебно заведение, No.</mat-label>
+        <input matInput [(ngModel)] = "model.registryNumberLz" formControlName="healthFacilityNo">
+        <mat-icon matIcon matSuffix>local_hospital</mat-icon>
+        <mat-error *ngIf="registerForm.controls['healthFacilityNo'].hasError('required')">*Задължително поле</mat-error>
+        <mat-error *ngIf="registerForm.controls['healthFacilityNo'].hasError('minlength')">*Дължина трябва да бъде 10 цифри</mat-error>
+        <mat-error *ngIf="registerForm.controls['healthFacilityNo'].hasError('maxlength')">*УИН не може да бъде повече от 10 цифри</mat-error>
+        <mat-error *ngIf="registerForm.controls['healthFacilityNo'].hasError('pattern')">*Полето трябва да съдържа само цифри</mat-error>
+      </mat-form-field>
+    </form>
+
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button (click)="register(model)" [disabled]="registerForm.invalid">РЕГИСТРАЦИЯ</button>
+  </mat-card-actions>
+</mat-card>
+
