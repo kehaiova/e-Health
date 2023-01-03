@@ -1,10 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {
-  ControlContainer, FormBuilder,
-  FormGroup,
-  FormGroupDirective,
-  Validators
-} from "@angular/forms";
+import {Component, OnInit} from '@angular/core';
+import {ControlContainer, FormBuilder, FormGroup, FormGroupDirective, Validators} from "@angular/forms";
 import {ReferralsBindingModel} from "../../models/referrals-binding-model";
 import {SavingService} from "../../services/saving.service";
 
@@ -17,7 +12,8 @@ import {SavingService} from "../../services/saving.service";
 })
 export class EReferralsCardDiagnosisComponent implements OnInit {
 
-  constructor(public savingService: SavingService, private formBuilder: FormBuilder,  private ctrlContainer: FormGroupDirective) { }
+  constructor(public savingService: SavingService, private formBuilder: FormBuilder, private ctrlContainer: FormGroupDirective) {
+  }
 
   model: ReferralsBindingModel = {
     id: '',

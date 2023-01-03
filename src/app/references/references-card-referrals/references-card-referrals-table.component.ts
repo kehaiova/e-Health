@@ -1,4 +1,4 @@
-import {Component, Input, OnChanges, OnInit, ViewChild} from '@angular/core';
+import {Component, Input, OnChanges, ViewChild} from '@angular/core';
 import {MatTableDataSource} from "@angular/material/table";
 import {VReferencesReferralsBindingModel} from "../../models/v-references-referrals-binding-model";
 import {MatPaginator} from "@angular/material/paginator";
@@ -18,7 +18,6 @@ export class ReferencesCardReferralsTableComponent implements OnChanges {
 
   constructor() {
   }
-
 
 
   displayedColumns: string [] = ['position', 'patientIdentificator', 'patientNames', 'doctorNames', 'diagnosis', 'sentFor', 'date']

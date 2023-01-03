@@ -2,9 +2,7 @@ import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {environment} from 'src/environments/environment';
 import {UserBindingModel} from "../models/user-binding-model";
-import {MatSnackBar} from "@angular/material/snack-bar";
 import {Router} from "@angular/router";
-import * as bcrypt from 'bcryptjs'
 import {SnackbarService} from "./snackbar.service";
 
 
@@ -43,13 +41,22 @@ export class UserService {
             this.snackbarService.openSnackbarForExistingEmail();
           } else if (error.status == 404) {
             this.snackbarService.openSnackbarForExistingUsername();
+          } else if (error.status == 502) {
+            this.snackbarService.openSnackbarForExistingUin();
           }
         });
   }
 
   _update(id: string) {
     this.http.put<any>(environment.baseUrl + "/user/update/" + id, this.user).subscribe(result => {
-      this.snackbarService.openSnackbarForSuccessfulSave();
-    });
+        this.snackbarService.openSnackbarForSuccessfulSave(); 
+      },
+      error => {
+        if (error.status == 400) {
+          this.snackbarService.openSnackbarForExistingEmail();
+        } else if (error.status == 404) {
+          this.snackbarService.openSnackbarForExistingUsername();
+        }
+      })
   }
 }

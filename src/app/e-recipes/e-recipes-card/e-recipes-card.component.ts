@@ -34,7 +34,6 @@ export class ERecipesCardComponent implements OnInit {
     })
   }
 
-
   submitRecipesFormParent(model: string) {
     this.recipesPersonDetails = this.personsService._findByPersonIdentificator(model);
     this.isSubmitted = true;

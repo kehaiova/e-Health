@@ -21,7 +21,7 @@ import { EReferralsCardInfoComponent } from './e-referrals-card/e-referrals-card
 import { EReferralsSaveCardComponent } from './e-referrals-card/e-referrals-save-card.component';
 import { EReferralsSaveCardGeneralDataComponent } from './e-referrals-card/e-referrals-save-card-general-data.component';
 import { EReferralsSaveCardDiagnosisComponent } from './e-referrals-card/e-referrals-save-card-diagnosis.component';
-
+import {EReferralsSaveCardInfoComponent} from "./e-referrals-card/e-referrals-save-card-info.component";
 
 
 @NgModule({
@@ -35,7 +35,8 @@ import { EReferralsSaveCardDiagnosisComponent } from './e-referrals-card/e-refer
     EReferralsCardInfoComponent,
     EReferralsSaveCardComponent,
     EReferralsSaveCardGeneralDataComponent,
-    EReferralsSaveCardDiagnosisComponent
+    EReferralsSaveCardDiagnosisComponent,
+    EReferralsSaveCardInfoComponent
   ],
     imports: [
         CommonModule,

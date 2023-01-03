@@ -44,6 +44,15 @@ export class SnackbarService {
     })
   }
 
+  openSnackbarForExistingUin() {
+    this._snackBar.open('Лекар с този УИН вече съществува!', '', {
+      duration: 2000,
+      panelClass: ['snackbar-error'],
+      horizontalPosition: "center",
+      verticalPosition: "top"
+    })
+  }
+
   openSnackbarForSuccessfulSave() {
     this._snackBar.open('Успешно запазване!', '', {
       duration: 2000,

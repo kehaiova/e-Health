@@ -8,9 +8,7 @@ export interface RecipesBindingModel {
   protocolNo: string,
   outpationListNo: string,
   doctorNames: string,
-
   uinDoctor: string,
-
   issueDate: string,
 
 }

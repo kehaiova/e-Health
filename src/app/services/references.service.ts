@@ -21,9 +21,9 @@ export class ReferencesService {
 
   }
 
-  _getReferenceDetailsReferrals(startDate: string, endDate: string):Observable<VReferencesReferralsBindingModel[]> {
+  _getReferenceDetailsReferrals(startDate: string, endDate: string): Observable<VReferencesReferralsBindingModel[]> {
     let uinDoctor = this.userService.user.uinDoctor;
-    return this.http.get<VReferencesReferralsBindingModel[]>(environment.baseUrl + "/references/referrals/getByUinDoctor/" + startDate + "/" + endDate + "/" +  uinDoctor);
+    return this.http.get<VReferencesReferralsBindingModel[]>(environment.baseUrl + "/references/referrals/getByUinDoctor/" + startDate + "/" + endDate + "/" + uinDoctor);
 
   }
 

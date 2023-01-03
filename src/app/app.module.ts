@@ -8,7 +8,7 @@ import {LayoutModule} from './layout/layout.module';
 import {MatIconModule} from '@angular/material/icon';
 import {ERecipesModule} from './e-recipes/e-recipes.module';
 import {MatTableDataSource} from '@angular/material/table';
-import {HttpClientModule, HttpRequest} from "@angular/common/http";
+import {HttpClientModule} from "@angular/common/http";
 import {DateAdapter, MAT_DATE_LOCALE} from "@angular/material/core";
 import {CustomDateAdapter} from "./config/CustomDateAdapter";
 import {ReferencesModule} from "./references/references.module";

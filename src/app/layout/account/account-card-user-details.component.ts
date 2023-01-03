@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {UserService} from "../../services/user.service";
 import {UserBindingModel} from "../../models/user-binding-model";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-account-card-user-details',
@@ -9,7 +10,10 @@ import {UserBindingModel} from "../../models/user-binding-model";
 })
 export class AccountCardUserDetailsComponent implements OnInit {
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService) {
+  }
+
+  editFormGroup!: FormGroup;
 
   user: UserBindingModel = {} as UserBindingModel;
 
@@ -17,18 +21,28 @@ export class AccountCardUserDetailsComponent implements OnInit {
 
   isSaved: boolean = false;
 
+
+
   ngOnInit(): void {
     this.user = this.userService.user;
+    this.createLoginFormGroup();
+  }
+
+  createLoginFormGroup() {
+    this.editFormGroup = new FormGroup<any>({
+      username: new FormControl('', [Validators.required]),
+      password: new FormControl('', [Validators.required]),
+      email: new FormControl('', [Validators.required, Validators.email])
+    })
   }
 
   edit() {
     this.editMode = true;
   }
 
+
   saveInfo(id: string) {
     this.userService._update(id);
-    this.isSaved = true;
     this.editMode = false;
   }
-
 }

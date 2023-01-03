@@ -12,7 +12,7 @@ export class ReasonsService {
   constructor(private http: HttpClient) {
   }
 
-  _getReasons(): Observable<ReasonsBindingModel[]>{
+  _getReasons(): Observable<ReasonsBindingModel[]> {
     return this.http.get<ReasonsBindingModel[]>(environment.baseUrl + "/reasons/findAll");
   }
 }

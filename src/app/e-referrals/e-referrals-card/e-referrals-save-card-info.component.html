@@ -1,0 +1,21 @@
+<div class="info-card">
+  <mat-card class="doctor-card">
+    <mat-card-header>Изпращащ лекар</mat-card-header>
+    <mat-card-content class="doctor-card-content">
+      <p>Регистрационен номер на лечебното заведение: {{doctorInformation.registryNumberLz}}</p>
+      <p>УИН: {{doctorInformation.uinDoctor}} </p>
+      <p>Имена: {{doctorInformation.doctorName}} </p>
+    </mat-card-content>
+  </mat-card>
+  <mat-card class="patient-card">
+    <mat-card-header>Данни за пациент</mat-card-header>
+    <mat-card-content class="patient-card-content">
+      <p>Имена: {{referralsPersonDetails.personNames}}</p>
+      <p>Идентификатор: {{referralsPersonDetails.personIdentificator}} </p>
+      <p>Адрес: {{referralsPersonDetails.address}} </p>
+      <p>РЗОК, No. {{referralsPersonDetails.rhifNo}}</p>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+

@@ -5,7 +5,7 @@ mat-card {
   box-shadow: 0px 20px 40px rgba(37, 69, 131, 0.2);
   border-radius: 20px;
   margin: 20px auto 10%;
-  min-height: 85%;
+  min-height: 500px;
 }
 
 img {

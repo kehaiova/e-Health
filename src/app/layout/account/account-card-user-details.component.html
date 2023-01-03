@@ -1,38 +1,36 @@
 <mat-card>
   <mat-card-header>Данни за потребителя</mat-card-header>
+  <div class="actions" [hidden]="editMode === true">
+    <button (click)="edit()">Активирай редакция</button>
+  </div>
   <mat-card-content>
-    <div>
-      <mat-form-field appearance="outline">
-        <mat-label>Потребителско име</mat-label>
-        <input matInput [readonly]="!editMode" [(ngModel)]="user.username">
-      </mat-form-field>
-      <button mat-icon-button class="icon-button" (click)="edit()">
-        <mat-icon>edit</mat-icon>
-      </button>
-    </div>
+    <form [formGroup]="editFormGroup">
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>Потребителско име</mat-label>
+          <input matInput [readonly]="!editMode" [(ngModel)]="user.username" formControlName="username">
+          <mat-error *ngIf="editFormGroup.controls['username'].hasError('required')">*Задължително поле</mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>Парола</mat-label>
+          <input matInput type="password" [readonly]="!editMode" [(ngModel)]="user.password" formControlName="password">
+          <mat-error *ngIf="editFormGroup.controls['password'].hasError('required')">*Задължително поле</mat-error>
 
-    <div>
-      <mat-form-field appearance="outline">
-        <mat-label>Парола</mat-label>
-        <input matInput type="password" [readonly]="!editMode" [(ngModel)]="user.password">
-      </mat-form-field>
-      <button mat-icon-button class="icon-button" (click)="edit()">
-        <mat-icon>edit</mat-icon>
-      </button>
-    </div>
-
-    <div>
-      <mat-form-field appearance="outline">
-        <mat-label>Имейл адрес</mat-label>
-        <input matInput [readonly]="!editMode" [(ngModel)]="user.email">
-      </mat-form-field>
-      <button mat-icon-button class="icon-button" (click)="edit()">
-        <mat-icon>edit</mat-icon>
-      </button>
-    </div>
-
-
-    <button *ngIf="editMode === true" [hidden]="isSaved === true" (click)="saveInfo(user.id)">Запази</button>
-
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>Имейл адрес</mat-label>
+          <input matInput [readonly]="!editMode" [(ngModel)]="user.email" formControlName="email">
+          <mat-error *ngIf="editFormGroup.controls['email'].hasError('required')">*Задължително поле</mat-error>
+          <mat-error *ngIf="editFormGroup.controls['email'].hasError('email')">*Въведете валиден имейл адрес</mat-error>
+        </mat-form-field>
+      </div>
+    </form>
+    <button *ngIf="editMode === true" [hidden]="isSaved === true"
+            (click)="saveInfo(user.id)">Запази
+    </button>
   </mat-card-content>
 </mat-card>

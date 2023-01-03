@@ -25,6 +25,7 @@ import {ERecipesSaveCardComponent} from './e-recipes-card/e-recipes-save-card.co
 import {ERecipesSaveCardGeneralDataComponent} from './e-recipes-card/e-recipes-save-card-general-data.component';
 import {ERecipesSaveCardTableComponent} from './e-recipes-card/e-recipes-save-card-table.component';
 import {NgEventBus} from "ng-event-bus";
+import {ERecipesSaveCardInfoComponent} from './e-recipes-card/e-recipes-save-card-info.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import {NgEventBus} from "ng-event-bus";
     ERecipesMedicalPrescriptionsComponent,
     ERecipesSaveCardComponent,
     ERecipesSaveCardGeneralDataComponent,
-    ERecipesSaveCardTableComponent
+    ERecipesSaveCardTableComponent,
+    ERecipesSaveCardInfoComponent
   ],
   imports: [
     CommonModule,

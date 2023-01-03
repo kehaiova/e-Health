@@ -28,7 +28,7 @@ body {
 }
 
 .snackbar-success {
-  background: #e1f5f7;
+  background: lightgreen;
   color:black;
 }
 
@@ -50,3 +50,12 @@ body {
   top: calc(100% - 1.7916666667em);
 }
 
+.main-card {
+  width: 93%;
+  background: linear-gradient(119.23deg, rgba(255, 255, 255, 0.7) 16.98%, rgba(255, 255, 255, 0.1) 92.15%);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 20px 40px rgba(37, 69, 131, 0.2);
+  border-radius: 20px;
+  margin: 20px auto 10%;
+  min-height: 85%;
+}

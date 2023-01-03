@@ -3,7 +3,6 @@ import {CommonModule} from '@angular/common';
 import {LoginComponent} from './login/login.component';
 import {LoginFormComponent} from './login/login-form.component';
 import {RouterModule} from '@angular/router';
-import {LayoutComponent} from './layout.component';
 import {MatCardModule} from '@angular/material/card'
 import {MatButtonModule} from '@angular/material/button'
 import {MatFormFieldModule} from '@angular/material/form-field'
@@ -26,7 +25,6 @@ import {AccountCardUserDetailsComponent} from './account/account-card-user-detai
 
 @NgModule({
   declarations: [
-    LayoutComponent,
     LoginComponent,
     LoginFormComponent,
     MenuComponent,

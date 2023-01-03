@@ -5,7 +5,6 @@ export interface UserBindingModel {
   username: string,
   password: string,
   uinDoctor: string,
-
   registryNumberLz: string,
 
 

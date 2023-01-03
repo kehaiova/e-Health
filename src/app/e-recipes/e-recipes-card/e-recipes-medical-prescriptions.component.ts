@@ -1,10 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {
-  ControlContainer,
-  FormBuilder,
-  FormGroup, FormGroupDirective,
-  Validators
-} from "@angular/forms";
+import {ControlContainer, FormBuilder, FormGroup, FormGroupDirective, Validators} from "@angular/forms";
 import {RecipeDrugsBindingModel} from "../../models/recipe-drugs-binding-model";
 import {SavingService} from "../../services/saving.service";
 import {NgEventBus} from "ng-event-bus";
@@ -29,7 +24,7 @@ export class ERecipesMedicalPrescriptionsComponent implements OnInit {
   medications: RecipeDrugsBindingModel [] = [];
   medicalPrescriptionForm!: FormGroup;
 
-  subMedicalPrescriptionForm!:FormGroup;
+  subMedicalPrescriptionForm!: FormGroup;
 
   ngOnInit(): void {
     this.createMedicalPrescriptionForm();

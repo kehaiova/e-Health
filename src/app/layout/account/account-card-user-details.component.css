@@ -30,7 +30,7 @@ mat-form-field {
 }
 
 mat-form-field:first-child {
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 form {
@@ -54,4 +54,12 @@ button {
   background: #313048;
   padding: 0 !important;
   width: 3rem;
+}
+
+.actions {
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  margin-top: 20px;
+  margin-right: 10px;
 }

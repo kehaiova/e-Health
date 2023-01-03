@@ -12,7 +12,8 @@ export class ReferencesCardReferralsFormComponent implements OnInit {
 
   @Output() referenceDatesReferral = new EventEmitter<ReferenceDatesBindingModel>();
 
-  constructor() { }
+  constructor() {
+  }
 
   model: ReferenceDatesBindingModel = {
     startDate: '',

@@ -1,10 +1,10 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {ROUTE_PATHS} from './routing/top-routes';
-import { LoginComponent } from './layout/login/login.component';
-import { MenuComponent } from './layout/menu/menu.component';
-import { ERecipesComponent } from './e-recipes/e-recipes.component';
-import { RegisterComponent } from './layout/register/register.component';
+import {LoginComponent} from './layout/login/login.component';
+import {MenuComponent} from './layout/menu/menu.component';
+import {ERecipesComponent} from './e-recipes/e-recipes.component';
+import {RegisterComponent} from './layout/register/register.component';
 import {EReferralsComponent} from "./e-referrals/e-referrals.component";
 import {ReferencesComponent} from "./references/references.component";
 import {AccountComponent} from "./layout/account/account.component";
