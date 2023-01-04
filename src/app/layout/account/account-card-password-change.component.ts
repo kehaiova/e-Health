@@ -10,6 +10,7 @@ import {
 } from "@angular/forms";
 import {UserBindingModel} from "../../models/user-binding-model";
 import {UserService} from "../../services/user.service";
+import {MyErrorStateMatcher} from "../../config/MyErrorStateMatcher";
 
 @Component({
   selector: 'app-account-card-password-change',
@@ -32,38 +33,28 @@ export class AccountCardPasswordChangeComponent implements OnInit {
 
   confirmPassword: string = '';
 
+  matcher = new MyErrorStateMatcher();
+
   ngOnInit(): void {
     this.user = this.userService.user;
     this.createLoginFormGroup();
   }
 
   createLoginFormGroup() {
-    this.passwordFormGroup = new FormGroup({
-      newPassword: new FormControl('', [Validators.required, this.matchValidator('confirmPassword', true)]),
-      confirmPassword: new FormControl('', [Validators.required, this.matchValidator('password')]),
-    })
+    this.passwordFormGroup = this.formBuilder.group({
+        newPassword: ['', [Validators.required]],
+        confirmPassword:[''],
+      },
+      {validator: this.checkPasswords})
   }
 
-  matchValidator(
-    matchTo: string,
-    reverse?: boolean
-  ): ValidatorFn {
-    return (control: AbstractControl):
-      ValidationErrors | null => {
-      if (control.parent && reverse) {
-        const c = (control.parent?.controls as any)[matchTo] as AbstractControl;
-        if (c) {
-          c.updateValueAndValidity();
-        }
-        return null;
-      }
-      return !!control.parent &&
-      !!control.parent.value &&
-      control.value ===
-      (control.parent?.controls as any)[matchTo]?.value
-        ? null
-        : {matching: true};
-    };
+  checkPasswords(group: FormGroup) {
+    let pass = group.controls['newPassword'].value;
+    let confirmPass = group.controls['confirmPassword'].value;
+
+    console.log(pass, "pass")
+    console.log(confirmPass, 'confirmPass')
+    return pass === confirmPass ? null : { notSame: true }
   }
 
   edit() {

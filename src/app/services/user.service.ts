@@ -23,7 +23,8 @@ export class UserService {
       .subscribe(result => {
           this.user = result;
           this.isLoggedIn = true;
-          this.router.navigate(["/menu"]).then(r => {});
+          this.router.navigate(["/menu"]).then(r => {
+          });
         },
         error => {
           this.snackbarService.openSnackbar('Грешно потребителско име/парола!', 'error')
@@ -34,7 +35,8 @@ export class UserService {
     this.http.post<UserBindingModel>(environment.baseUrl + "/user/register", userDetails)
       .subscribe((result) => {
           this.snackbarService.openSnackbar('Успешна регистрация!', 'success');
-          this.router.navigate(["/login"]).then(r => {})
+          this.router.navigate(["/login"]).then(r => {
+          })
         },
         error => {
           if (error.status == 400) {
@@ -56,16 +58,15 @@ export class UserService {
           this.snackbarService.openSnackbar('Имейл адресът вече съществува!', 'error');
         } else if (error.status == 404) {
           this.snackbarService.openSnackbar('Потребителското име вече съществува', 'error');
+        } else if (error.status == 502) {
+          this.snackbarService.openSnackbar('Текущата и въведената Ви парола не съвпадат!', 'error')
         }
       })
   }
 
   _updatePassword(id: string, password: string) {
     this.http.put<any>(environment.baseUrl + "/user/updateUserPassword/" + id, password).subscribe(result => {
-        this.snackbarService.openSnackbar('Успешна смяна на парола', 'success');
-      },
-      error => {
-        this.snackbarService.openSnackbar('Текущата и въведената Ви парола не съвпадат!', 'error')
-      })
+      this.snackbarService.openSnackbar('Успешна смяна на парола', 'success');
+    });
   }
 }

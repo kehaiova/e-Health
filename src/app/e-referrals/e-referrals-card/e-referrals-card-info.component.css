@@ -7,6 +7,10 @@ mat-card-content {
   height: 13rem;
 }
 
+.patient-card, .doctor-card {
+  width: 40vw;
+}
+
 .info-card {
   display: flex;
   flex-direction: row;
