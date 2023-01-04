@@ -3,6 +3,11 @@
   font-size: 14px;
 }
 
+
+*:focus {
+  outline: 0 !important;
+}
+
 @font-face {
   font-family: 'Sofia-Sans';
   src: url("assets/fonts/SofiaSansCond-Regular.otf");
@@ -17,14 +22,103 @@ body {
   margin: 0;
 }
 
+.mat-card {
+  width: 93%;
+  background: linear-gradient(119.23deg, rgba(255, 255, 255, 0.7) 16.98%, rgba(255, 255, 255, 0.1) 92.15%);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 40px rgba(37, 69, 131, 0.2) !important;
+  border-radius: 20px !important;
+  padding: 0 !important;
+  margin: 20px auto;
+}
+
+.main-card {
+  min-height: 87vh !important;
+}
+
+.patient-info {
+  width: 87vw;
+  height: 13rem;
+  margin-top: 30px;
+}
+
+.patient-card, .doctor-card {
+  height: 15rem;
+  width: 50vw;
+}
+
+.mat-card-header {
+  background: #d7edea;
+  border: 1px solid #d7edea;
+  border-radius: 20px 20px 0 0 !important;
+  padding: 5px 0 5px 0 !important;
+  color: dimgrey;
+}
+
+.mat-card-title {
+  margin-top: 20px !important;
+  text-align: center !important;
+}
+
+.mat-card-actions {
+  padding: 0 !important;
+  margin-left: 0 !important;
+}
+
+.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+  color: #1c8aac !important;
+}
+
+.mat-focused .mat-form-field-label {
+  color: #1c8aac !important;
+}
+
+.mat-form-field-outline-start {
+  border-radius: 28px 0 0 28px !important;
+  min-width: 28px !important;
+}
+
+.mat-form-field-outline-end {
+  border-radius: 0 28px 28px 0 !important;
+}
+
+.mat-form-field-flex > .mat-form-field-infix {
+  padding: .9em !important;
+}
+
+.mat-focused .mat-form-field-label {
+  margin-top: -1px !important;
+  margin-left: 24px !important;
+}
+
+.mat-form-field-label {
+  top: 26px !important;
+  margin-left: 22px;
+}
+
+.no-wrapper {
+  margin-bottom: -1.25em !important;
+}
+
+mat-form-field {
+  margin: 0 15px 0 15px;
+}
+
+.error {
+  font-size: 100%;
+  margin-top: 0 !important;
+  top: calc(100% - 1.7916666667em);
+}
+
+
 .snackbar-error {
   background: #b00020;
   color: white;
 }
 
 .snackbar-success {
-  background: lightgreen;
-  color:black;
+  background: #29906D;
+  color: black;
 }
 
 .mat-snack-bar-container {
@@ -35,26 +129,112 @@ body {
   display: inline-block !important;
 }
 
-.no-wrapper {
-  margin-bottom: -1.25em !important;
+.mat-divider {
+  margin-top: 30px !important;
 }
 
-.error {
-  font-size: 100%;
-  margin-top: 0 !important;
-  top: calc(100% - 1.7916666667em);
-}
-
-.mat-card {
-  width: 93%;
-  background: linear-gradient(119.23deg, rgba(255, 255, 255, 0.7) 16.98%, rgba(255, 255, 255, 0.1) 92.15%);
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 20px 40px rgba(37, 69, 131, 0.2);
+button {
+  border: 1px solid #99A0BA;
   border-radius: 20px !important;
-  padding: 0;
-  margin: 20px auto;
+  align-items: center;
 }
 
-.main-card {
-  min-height: 90vh !important;
+button:disabled {
+  border: none !important;
 }
+
+.form-button {
+  background: #313048 !important;
+  color: white;
+  padding: 10px;
+  width: 80px;
+}
+
+.edit-button {
+  background: #313048 !important;
+  color: white;
+  width: 130px;
+  padding: 8px;
+}
+
+.drug-button {
+  background: #313048 !important;
+  color: white;
+  width: 170px;
+  padding: 8px;
+}
+
+.drug-button:disabled {
+  background: grey !important;
+  color: white;
+}
+
+.form-button:disabled {
+  background: grey !important;
+  color: white;
+}
+
+.mat-menu-item:hover {
+  background: none !important;
+  height: auto;
+}
+
+.mat-step-header .mat-step-icon-selected {
+  background-color: #74d4cc !important;
+}
+
+.mat-step-header .mat-step-icon-state-edit {
+  background-color: #313048 !important;
+}
+
+table {
+  background: transparent !important;
+  width: 100% !important;
+}
+
+td {
+  text-align: center !important;
+}
+
+th {
+  text-align: center !important;
+  white-space: unset !important;
+  flex: 0 0 28% !important;
+  width: 100vw !important;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+th.mat-header-cell {
+  text-align: center !important;
+  border-bottom-style: none !important;
+
+}
+
+td.mat-cell {
+  border-bottom-style: none !important;
+}
+
+.mat-tab-group.mat-primary .mat-ink-bar, .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+  background-color: #313048 !important;
+}
+
+.mat-calendar-body-active > .mat-calendar-body-today, .mat-calendar-body-selected {
+  color: white;
+  background-color: #313048 !important;
+}
+
+.mat-calendar-body-cell:not(.mat-calendar-body-disabled):hover > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical) {
+  background-color: #d7edea;
+}
+
+.mat-datepicker-toggle {
+  color: #313048 !important;
+}
+
+
+

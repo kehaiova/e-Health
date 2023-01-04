@@ -1,7 +1,9 @@
 <mat-card>
   <mat-card-header>Предписание</mat-card-header>
   <div>
-    <button mat-raised-button [disabled]="subMedicalPrescriptionForm.invalid" (click)="addDrugToList(); sendData()">Добави лекарствен продукт</button>
+    <button class="drug-button" [disabled]="subMedicalPrescriptionForm.invalid" (click)="addDrugToList(); sendData()">
+      Добави лекарствен продукт
+    </button>
 
   </div>
   <mat-card-content>

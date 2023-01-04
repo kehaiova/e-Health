@@ -43,17 +43,16 @@ export class SavingService {
       recipeDrugsList: this.medications
     }
     this.http.post(environment.baseUrl + "/recipes/saveAndFlush", this.recipe).subscribe(result => {
-      this.snackbarService.openSnackbarForSuccessfulSave();
+      this.snackbarService.openSnackbar('Успешно издаване на рецепта!', 'success');
     });
   }
 
   saveReferral() {
-    const formattedDate = formatDate(Date.now(), 'yyyy-MM-dd', 'en-US');
-    this.referral.issueDate = formattedDate;
+    this.referral.issueDate = formatDate(Date.now(), 'yyyy-MM-dd', 'en-US');
     this.referral.personId = this.personsService.personId;
     this.referral.uinDoctor = this.userService.user.uinDoctor;
     this.http.post(environment.baseUrl + "/referrals/saveAndFlush", this.referral).subscribe(result => {
-      this.snackbarService.openSnackbarForSuccessfulSave();
+      this.snackbarService.openSnackbar('Успешно издаване на направление!', 'success');
     })
   }
 

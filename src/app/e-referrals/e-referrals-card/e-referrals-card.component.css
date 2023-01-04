@@ -1,44 +1,20 @@
-mat-divider {
-  margin-top: 30px;
-}
-
-mat-card-title {
-  text-align: center;
-}
-
 mat-stepper {
-  background: transparent;
+  background: transparent !important;
 }
-
-::ng-deep .mat-step-header .mat-step-icon-selected {
-  background-color: #74d4cc;
-}
-
-::ng-deep .mat-step-header .mat-step-icon-state-edit {
-  background-color: #313048;
-}
-
-
-button {
-  background: #313048;
-  border: 1px solid #99A0BA;
-  border-radius: 2em;
-  color: white;
-  align-items: center;
-  padding: 0.3em 1.5em !important;
-  margin-right: 20px;
-}
-
-button:disabled {
-  border: none;
-  background: darkgrey;
-}
-
 
 div {
   display: flex;
   justify-content: center;
   margin-top: 20px;
 }
+
+button:first-child {
+  margin-right: 20px;
+}
+
+button:last-child {
+  margin-left: 20px;
+}
+
 
 

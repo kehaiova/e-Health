@@ -1,18 +1,6 @@
 mat-card {
-  background: linear-gradient(90.89deg, rgba(255, 255, 255, 0.7) 19.49%, rgba(255, 255, 255, 0.1) 72.8%);
-  box-shadow: 0 20px 40px rgba(37, 69, 131, 0.2);
-  border-radius: 20px;
-  padding: 0;
   height: 13rem;
   margin-top: 30px;
-}
-
-mat-card-header {
-  background: #d7edea;
-  border: 1px solid #d7edea;
-  border-radius: 20px 20px 0 0;
-  padding: 5px 0 5px 0;
-  color: dimgrey;
 }
 
 mat-card-content {

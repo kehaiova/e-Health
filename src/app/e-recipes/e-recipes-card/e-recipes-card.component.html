@@ -19,8 +19,8 @@
         <mat-divider></mat-divider>
         <app-e-recipes-medical-prescriptions></app-e-recipes-medical-prescriptions>
         <div>
-          <button mat-button matStepperPrevious>НАЗАД</button>
-          <button mat-button matStepperNext
+          <button class="form-button" matStepperPrevious>НАЗАД</button>
+          <button class="form-button" matStepperNext
                   [disabled]="parentFormGroup.invalid || savingService.medications.length === 0">НАПРЕД
           </button>
         </div>
@@ -30,9 +30,9 @@
       <ng-template matStepLabel>Преглед и изпращане</ng-template>
       <app-e-recipes-save-card></app-e-recipes-save-card>
       <div>
-        <button mat-button matStepperPrevious>НАЗАД</button>
-        <button mat-button matStepperNext (click)="saveData()">ИЗПРАЩАНЕ</button>
-        <button mat-button matStepperNext (click)="stepper.reset()">РЕСТАРТ</button>
+        <button class="form-button"matStepperPrevious>НАЗАД</button>
+        <button class="form-button" matStepperNext (click)="saveData()">ИЗПРАЩАНЕ</button>
+        <button class="form-button" matStepperNext (click)="stepper.reset()">РЕСТАРТ</button>
       </div>
     </mat-step>
   </mat-stepper>

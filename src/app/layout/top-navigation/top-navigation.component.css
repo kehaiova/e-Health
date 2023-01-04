@@ -12,6 +12,10 @@ mat-toolbar {
   padding: 0;
 }
 
+mat-divider {
+  margin: 0 !important;
+}
+
 mat-nav-list {
   display: flex;
   justify-content: center;
@@ -29,6 +33,7 @@ button {
 div {
   background: #c0e7e2;
 }
+
 
 .active-list-item {
   background: #e1f5f7 !important;

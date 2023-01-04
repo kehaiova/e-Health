@@ -1,7 +1,7 @@
 <mat-card>
   <mat-card-header>Данни за потребителя</mat-card-header>
   <div class="actions" [hidden]="editMode === true">
-    <button (click)="edit()">Активирай редакция</button>
+    <button class="edit-button" (click)="edit()">Активирай редакция</button>
   </div>
   <mat-card-content>
     <form [formGroup]="editFormGroup">
@@ -28,8 +28,8 @@
         </mat-form-field>
       </div>
     </form>
-    <button *ngIf="editMode === true" [hidden]="isSaved === true"
-            (click)="saveInfo(user.id)">Запази
+    <button class="form-button" *ngIf="editMode === true" [hidden]="isSaved === true"
+            (click)="saveInfo(user.id)" [disabled]="editFormGroup.invalid">Запази
     </button>
   </mat-card-content>
 </mat-card>

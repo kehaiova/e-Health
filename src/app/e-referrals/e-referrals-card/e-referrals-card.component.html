@@ -21,8 +21,8 @@
         <mat-divider></mat-divider>
         <app-e-referrals-card-sent-for></app-e-referrals-card-sent-for>
         <div>
-          <button mat-button matStepperPrevious>НАЗАД</button>
-          <button mat-button matStepperNext [disabled]="parentFormGroup.invalid">НАПРЕД</button>
+          <button class="form-button" matStepperPrevious>НАЗАД</button>
+          <button class="form-button" matStepperNext [disabled]="parentFormGroup.invalid">НАПРЕД</button>
         </div>
       </form>
     </mat-step>
@@ -30,9 +30,9 @@
       <ng-template matStepLabel>Преглед и изпращане</ng-template>
       <app-e-referrals-save-card></app-e-referrals-save-card>
       <div>
-        <button mat-button matStepperPrevious>НАЗАД</button>
-        <button mat-button matStepperNext (click)="saveReferralData()">ИЗПРАЩАНЕ</button>
-        <button mat-button matStepperNext (click)="stepper.reset()">РЕСТАРТ</button>
+        <button class="form-button" matStepperPrevious>НАЗАД</button>
+        <button class="form-button" matStepperNext (click)="saveReferralData()">ИЗПРАЩАНЕ</button>
+        <button class="form-button" matStepperNext (click)="stepper.reset()">РЕСТАРТ</button>
       </div>
     </mat-step>
   </mat-stepper>

@@ -23,51 +23,49 @@ export class UserService {
       .subscribe(result => {
           this.user = result;
           this.isLoggedIn = true;
-          this.router.navigate(["/menu"]);
+          this.router.navigate(["/menu"]).then(r => {});
         },
         error => {
-          this.snackbarService.openSnackbarUsernameAndPassword()
+          this.snackbarService.openSnackbar('Грешно потребителско име/парола!', 'error')
         })
   }
 
   _register(userDetails: UserBindingModel) {
     this.http.post<UserBindingModel>(environment.baseUrl + "/user/register", userDetails)
       .subscribe((result) => {
-          this.snackbarService.openSnackbarForSuccessfulRegister();
-          this.router.navigate(["/login"])
+          this.snackbarService.openSnackbar('Успешна регистрация!', 'success');
+          this.router.navigate(["/login"]).then(r => {})
         },
         error => {
           if (error.status == 400) {
-            this.snackbarService.openSnackbarForExistingEmail();
+            this.snackbarService.openSnackbar('Имейлът е зает!', 'error');
           } else if (error.status == 404) {
-            this.snackbarService.openSnackbarForExistingUsername();
+            this.snackbarService.openSnackbar('Потребителското име е заето!', 'error');
           } else if (error.status == 502) {
-            this.snackbarService.openSnackbarForExistingUin();
+            this.snackbarService.openSnackbar('Лекар с този УИН вече съществува!', 'error');
           }
         });
   }
 
   _update(id: string) {
     this.http.put<any>(environment.baseUrl + "/user/update/" + id, this.user).subscribe(result => {
-        this.snackbarService.openSnackbarForSuccessfulSave();
+        this.snackbarService.openSnackbar('Успешно актуализиране на информацията', 'success');
       },
       error => {
         if (error.status == 400) {
-          this.snackbarService.openSnackbarForExistingEmail();
+          this.snackbarService.openSnackbar('Имейл адресът вече съществува!', 'error');
         } else if (error.status == 404) {
-          this.snackbarService.openSnackbarForExistingUsername();
-        } else if (error.status == 502) {
-          this.snackbarService.openSnackbarError('Паролите не съвпадат', 'error')
+          this.snackbarService.openSnackbar('Потребителското име вече съществува', 'error');
         }
       })
   }
 
   _updatePassword(id: string, password: string) {
     this.http.put<any>(environment.baseUrl + "/user/updateUserPassword/" + id, password).subscribe(result => {
-        this.snackbarService.openSnackbarForSuccessfulSave();
+        this.snackbarService.openSnackbar('Успешна смяна на парола', 'success');
       },
       error => {
-        this.snackbarService.openSnackbarError('Паролите не съвпадат!', 'error')
+        this.snackbarService.openSnackbar('Текущата и въведената Ви парола не съвпадат!', 'error')
       })
   }
 }

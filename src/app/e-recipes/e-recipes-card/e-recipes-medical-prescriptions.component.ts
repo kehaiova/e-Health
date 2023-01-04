@@ -46,7 +46,7 @@ export class ERecipesMedicalPrescriptionsComponent implements OnInit {
     };
     this.medications.push(newDrug);
     this.savingService.medications = this.medications;
-    this.snackBarService.openSnackbarForAddedDrug();
+    this.snackBarService.openSnackbar('Успешно добавяне на лекарствен продукт!', 'success');
   }
 
   sendData() {

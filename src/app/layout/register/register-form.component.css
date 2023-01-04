@@ -11,9 +11,6 @@ mat-card {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background: linear-gradient(85.45deg, rgba(255, 255, 255, 0.7) 5.82%, rgba(255, 255, 255, 0.2) 96.86%);
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0px 20px 40px rgba(37, 69, 131, 0.2);
   width: 450px;
   height: 700px;
 }
@@ -37,7 +34,6 @@ a {
 
 mat-form-field {
   width: 26rem;
-  color: black;
   border-radius: 2em;
   margin-bottom: 5px;
 }
@@ -61,7 +57,7 @@ form {
   border-radius: 2em;
   border: 2px solid transparent;
   box-sizing: border-box;
-  width: 275px;
+  width: 270px;
   height: 40px;
   gap: 132px;
 }

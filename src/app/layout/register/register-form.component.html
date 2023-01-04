@@ -10,14 +10,14 @@
       <mat-form-field appearance="outline">
         <mat-label>Име и фамилия</mat-label>
         <input matInput [(ngModel)] = "model.doctorName" formControlName="doctorName">
-        <mat-icon matIcon matSuffix>person</mat-icon>
+        <mat-icon matSuffix>person</mat-icon>
         <mat-error *ngIf="registerForm.controls['doctorName'].hasError('required')">*Задължително поле</mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="outline">
         <mat-label>Имейл адрес</mat-label>
         <input matInput [(ngModel)] = "model.email" formControlName="email">
-        <mat-icon matIcon matSuffix>mail</mat-icon>
+        <mat-icon matSuffix>mail</mat-icon>
         <mat-error *ngIf="registerForm.controls['email'].hasError('required')">*Задължително поле</mat-error>
         <mat-error *ngIf="registerForm.controls['email'].hasError('email')">*Въведете валиден имейл адрес</mat-error>
 
@@ -32,14 +32,14 @@
       <mat-form-field appearance="outline">
         <mat-label>Парола</mat-label>
         <input matInput type="password" [(ngModel)] = "model.password" formControlName="password">
-        <mat-icon matIcon matSuffix>key</mat-icon>
+        <mat-icon matSuffix>key</mat-icon>
         <mat-error *ngIf="registerForm.controls['password'].hasError('required')">*Задължително поле</mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="outline">
         <mat-label>УИН</mat-label>
         <input matInput [(ngModel)] = "model.uinDoctor" formControlName="uinDoctor">
-        <mat-icon matIcon matSuffix>badge</mat-icon>
+        <mat-icon matSuffix>badge</mat-icon>
         <mat-error *ngIf="registerForm.controls['uinDoctor'].hasError('required')">*Задължително поле</mat-error>
         <mat-error *ngIf="registerForm.controls['uinDoctor'].hasError('minlength')">*Дължина трябва да бъде 10 цифри</mat-error>
         <mat-error *ngIf="registerForm.controls['uinDoctor'].hasError('maxlength')">*УИН не може да бъде повече от 10 цифри</mat-error>
@@ -49,7 +49,7 @@
       <mat-form-field appearance="outline">
         <mat-label>Лечебно заведение, No.</mat-label>
         <input matInput [(ngModel)] = "model.registryNumberLz" formControlName="healthFacilityNo">
-        <mat-icon matIcon matSuffix>local_hospital</mat-icon>
+        <mat-icon matSuffix>local_hospital</mat-icon>
         <mat-error *ngIf="registerForm.controls['healthFacilityNo'].hasError('required')">*Задължително поле</mat-error>
         <mat-error *ngIf="registerForm.controls['healthFacilityNo'].hasError('minlength')">*Дължина трябва да бъде 10 цифри</mat-error>
         <mat-error *ngIf="registerForm.controls['healthFacilityNo'].hasError('maxlength')">*УИН не може да бъде повече от 10 цифри</mat-error>

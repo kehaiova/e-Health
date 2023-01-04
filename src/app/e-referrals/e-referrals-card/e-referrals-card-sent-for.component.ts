@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ReasonsService} from "../../services/reasons.service";
 import {ReasonsBindingModel} from "../../models/reasons-binding-model";
-import {map, Observable} from "rxjs";
-import {ControlContainer, FormBuilder, FormControl, FormGroup, FormGroupDirective, Validators} from "@angular/forms";
+import {Observable} from "rxjs";
+import {ControlContainer, FormBuilder, FormGroup, FormGroupDirective, Validators} from "@angular/forms";
 import {SavingService} from "../../services/saving.service";
 
 @Component({
@@ -12,9 +12,9 @@ import {SavingService} from "../../services/saving.service";
   viewProviders: [{provide: ControlContainer, useExisting: FormGroupDirective}]
 
 })
-export class EReferralsCardSentForComponent implements OnInit{
+export class EReferralsCardSentForComponent implements OnInit {
 
-  constructor(private reasonsService: ReasonsService, public savingService: SavingService, private formBuilder: FormBuilder,  private ctrlContainer: FormGroupDirective) {
+  constructor(private reasonsService: ReasonsService, public savingService: SavingService, private formBuilder: FormBuilder, private ctrlContainer: FormGroupDirective) {
   }
 
   reasons!: Observable<ReasonsBindingModel[]>

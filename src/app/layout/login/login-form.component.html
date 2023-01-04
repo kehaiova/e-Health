@@ -17,7 +17,7 @@
       <mat-form-field appearance="outline">
         <mat-label>Парола</mat-label>
         <input matInput type="password" formControlName="password" [(ngModel)]="model.password">
-        <mat-icon matIcon matSuffix>key</mat-icon>
+        <mat-icon matSuffix>key</mat-icon>
         <mat-error *ngIf="loginFormGroup.controls['password'].hasError('required')">*Задължително поле</mat-error>
       </mat-form-field>
     </form>

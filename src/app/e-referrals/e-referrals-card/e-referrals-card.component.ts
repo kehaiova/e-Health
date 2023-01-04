@@ -28,7 +28,6 @@ export class EReferralsCardComponent implements OnInit {
     this.parentFormGroup = this.formBuilder.group({
       secondFormGroup: this.formBuilder.group({}),
       thirdFormGroup: this.formBuilder.group({}),
-      // fourthFormGroup: this.formBuilder.group({}),
     })
   }
 
