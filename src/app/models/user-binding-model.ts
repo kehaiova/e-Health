@@ -7,5 +7,4 @@ export interface UserBindingModel {
   uinDoctor: string,
   registryNumberLz: string,
 
-
 }

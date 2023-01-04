@@ -22,6 +22,7 @@ import {MatMenuModule} from "@angular/material/menu";
 import {AccountComponent} from './account/account.component';
 import {AccountCardComponent} from './account/account-card.component';
 import {AccountCardUserDetailsComponent} from './account/account-card-user-details.component';
+import { AccountCardPasswordChangeComponent } from './account/account-card-password-change.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import {AccountCardUserDetailsComponent} from './account/account-card-user-detai
     AccountComponent,
     AccountCardComponent,
     AccountCardUserDetailsComponent,
+    AccountCardPasswordChangeComponent,
   ],
   imports: [
     CommonModule,

@@ -1,12 +1,13 @@
-<mat-card>
+<mat-card class="main-card">
   <mat-card-content>
     <div class="user-info">
-      <img src="./assets/doctor_profile.png">
+      <img src="./assets/doctor_profile.png" alt="">
       <h1>{{loggedUser}}</h1>
     </div>
     <mat-divider></mat-divider>
     <div class="info">
       <app-account-card-user-details></app-account-card-user-details>
+      <app-account-card-password-change></app-account-card-password-change>
     </div>
   </mat-card-content>
 </mat-card>

@@ -26,7 +26,7 @@ export class UserService {
           this.router.navigate(["/menu"]);
         },
         error => {
-          this.snackbarService.openSnackbar()
+          this.snackbarService.openSnackbarUsernameAndPassword()
         })
   }
 
@@ -49,14 +49,25 @@ export class UserService {
 
   _update(id: string) {
     this.http.put<any>(environment.baseUrl + "/user/update/" + id, this.user).subscribe(result => {
-        this.snackbarService.openSnackbarForSuccessfulSave(); 
+        this.snackbarService.openSnackbarForSuccessfulSave();
       },
       error => {
         if (error.status == 400) {
           this.snackbarService.openSnackbarForExistingEmail();
         } else if (error.status == 404) {
           this.snackbarService.openSnackbarForExistingUsername();
+        } else if (error.status == 502) {
+          this.snackbarService.openSnackbarError('Паролите не съвпадат', 'error')
         }
+      })
+  }
+
+  _updatePassword(id: string, password: string) {
+    this.http.put<any>(environment.baseUrl + "/user/updateUserPassword/" + id, password).subscribe(result => {
+        this.snackbarService.openSnackbarForSuccessfulSave();
+      },
+      error => {
+        this.snackbarService.openSnackbarError('Паролите не съвпадат!', 'error')
       })
   }
 }

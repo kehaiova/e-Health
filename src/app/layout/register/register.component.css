@@ -4,4 +4,5 @@ body {
   -o-background-size: cover;
   background-size: cover;
   background-image: url("src/assets/Background.jpg") ;
+  height: 100vh;
 }
