@@ -13,6 +13,10 @@ import {DateAdapter, MAT_DATE_LOCALE} from "@angular/material/core";
 import {CustomDateAdapter} from "./config/CustomDateAdapter";
 import {ReferencesModule} from "./references/references.module";
 import {EReferralsModule} from "./e-referrals/e-referrals.module";
+import {registerLocaleData} from "@angular/common";
+import localeBg from '@angular/common/locales/bg';
+
+registerLocaleData(localeBg);
 
 @NgModule({
   declarations: [

@@ -47,6 +47,11 @@
         <td mat-cell *matCellDef="let element">{{element.issueDate | date: 'dd.MM.yyyy'}}</td>
       </ng-container>
 
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" [attr.colspan]="displayedColumns.length">
+          Няма резултати за показване
+        </td>
+      </tr>
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

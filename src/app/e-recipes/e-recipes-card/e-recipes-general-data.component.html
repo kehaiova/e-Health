@@ -4,7 +4,7 @@
     <form [formGroup]="subGeneralDataFormGroup">
       <mat-form-field appearance="outline" class="no-wrapper">
         <mat-label>Рецептурна книжка, No.</mat-label>
-        <input matInput formControlName="prescriptionBookletNo" [(ngModel)]="savingService.prescriptionBookletNo">
+        <input matInput formControlName="prescriptionBookletNo" [(ngModel)]="savingService.recipe.prescriptionBookletNo">
         <mat-hint class="hint">*Попълва се в случаите на хронично заболяване</mat-hint>
         <mat-error class="error" *ngIf="subGeneralDataFormGroup.get('prescriptionBookletNo')?.hasError('pattern')">
           *Полето трябва да съдържа само цифри
@@ -13,7 +13,7 @@
 
       <mat-form-field appearance="outline" class="no-wrapper">
         <mat-label>Номер на протокол</mat-label>
-        <input matInput formControlName="protocolNo" [(ngModel)]="savingService.protocolNo">
+        <input matInput formControlName="protocolNo" [(ngModel)]="savingService.recipe.protocolNo">
         <mat-error class="error" *ngIf="subGeneralDataFormGroup.get('protocolNo')?.hasError('required')">
           *Задължително поле
         </mat-error>
@@ -24,7 +24,7 @@
 
       <mat-form-field appearance="outline" class="no-wrapper">
         <mat-label>Амбулаторен лист, No.</mat-label>
-        <input matInput formControlName="outpatientListNo" [(ngModel)]="savingService.outpationListNo">
+        <input matInput formControlName="outpatientListNo" [(ngModel)]="savingService.recipe.outpationListNo">
         <mat-error class="error" *ngIf="subGeneralDataFormGroup.get('outpatientListNo')?.hasError('required')">
           *Задължително поле
         </mat-error>

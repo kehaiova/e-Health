@@ -31,24 +31,16 @@ export class SavingService {
   mcbCode: string = '';
 
   saveRecipe() {
-    const formattedDate = formatDate(Date.now(), 'yyyy-MM-dd', 'en-US');
-    this.recipe = {
-      personId: this.personsService.personId,
-      prescriptionBookletNo: this.prescriptionBookletNo,
-      protocolNo: this.protocolNo,
-      outpationListNo: this.outpationListNo,
-      doctorNames: this.userService.user.doctorName,
-      uinDoctor: this.userService.user.uinDoctor,
-      issueDate: formattedDate,
-      recipeDrugsList: this.medications
-    }
+    this.recipe.personId = this.personsService.personId;
+    this.recipe.issueDate = formatDate(Date.now(), 'yyyy-MM-dd', 'bg-BG'), this.recipe.uinDoctor = this.userService.user.uinDoctor;
+    this.recipe.recipeDrugsList = this.medications;
     this.http.post(environment.baseUrl + "/recipes/saveAndFlush", this.recipe).subscribe(result => {
       this.snackbarService.openSnackbar('Успешно издаване на рецепта!', 'success');
     });
   }
 
   saveReferral() {
-    this.referral.issueDate = formatDate(Date.now(), 'yyyy-MM-dd', 'en-US');
+    this.referral.issueDate = formatDate(Date.now(), 'yyyy-MM-dd', 'bg-BG');
     this.referral.personId = this.personsService.personId;
     this.referral.uinDoctor = this.userService.user.uinDoctor;
     this.http.post(environment.baseUrl + "/referrals/saveAndFlush", this.referral).subscribe(result => {

@@ -3,17 +3,17 @@
   <mat-card-content>
       <mat-form-field appearance="outline" class="no-wrapper">
         <mat-label>Рецептурна книжка, No.</mat-label>
-        <input matInput [(ngModel)]="savingService.prescriptionBookletNo" readonly>
+        <input matInput [(ngModel)]="savingService.recipe.prescriptionBookletNo" readonly>
       </mat-form-field>
 
       <mat-form-field appearance="outline" class="no-wrapper">
         <mat-label>Номер на протокол</mat-label>
-        <input matInput  [(ngModel)]="savingService.protocolNo" readonly>
+        <input matInput  [(ngModel)]="savingService.recipe.protocolNo" readonly>
       </mat-form-field>
 
       <mat-form-field appearance="outline" class="no-wrapper">
         <mat-label>Амбулаторен лист, No.</mat-label>
-        <input matInput [(ngModel)]="savingService.outpationListNo" readonly>
+        <input matInput [(ngModel)]="savingService.recipe.outpationListNo" readonly>
       </mat-form-field>
   </mat-card-content>
 </mat-card>
